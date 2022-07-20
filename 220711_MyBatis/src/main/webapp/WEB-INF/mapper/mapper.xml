@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="test_db">
+<!--  	<insert id="insert_data" parameterType="kr.hs.study.beans.DataDAO">
+ 	insert into mvc_table values(#{data1},#{data2},#{data3})
+ 	</insert> -->
+ 	<insert id="insert_data" parameterType="kr.hs.study.dto.DataBean">
+ 		insert into test0712 values(#{data1} ,#{data2} ,#{data3})
+ 	</insert>
+ 	
+ 	<select id="select_data" resultType="kr.hs.study.dto.DataBean">
+ 		select * from test0712
+ 	</select>
+ 	
+ 	 <update id="update_data" parameterType="kr.hs.study.dto.DataBean">
+ 		update test0712 set data1=#{data1}, data2=#{data2},data3=#{data3}
+ 	</update>
+ 	
+ 	<delete id="delete_data" parameterType="java.lang.String">
+ 		delete from test0712 where data1 = #{data1}
+ 	</delete>
+<!-- 	<delete id="delete_all_data" parameterType="java.lang.String">
+		delete test0712;
+	</delete> -->
+</mapper>
